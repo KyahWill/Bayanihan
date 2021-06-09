@@ -1,16 +1,13 @@
 from kivy.garden.mapview import MapView,MapMarkerPopup
 from kivy.clock import Clock
 from kivy.app import App
-#from pantryMarker import PantryMarker
 import JSON.ReadJson as ReadJson
 from kivy.uix.button import Button
 
 class PantryMapView(MapView):
-
     timer = None
     listAllPantries = ReadJson.getPantries()
     pantryNames = []
-
 
     def getMarketsTry(self):
         try: 
