@@ -1,12 +1,18 @@
 import json
 
+def getPantries():
+    f = open("JSON\\Pantries.json", 'r', encoding='utf8', errors='ignore')
+    data = json.load(f)
+    f.close()
+    return data
 
 if __name__ == "__main__":
-    f = open("latestPantries.json", 'r', encoding='utf8', errors='ignore')
+    import os
+    print(os.listdir())
+    f = open("JSON\\Pantries.json", 'r', encoding='utf8', errors='ignore')
     data = json.load(f)
 
-    for i in data:
-        print(i["city"])
+    print(data)
 
     f.close()
     
