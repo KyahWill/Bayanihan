@@ -21,12 +21,15 @@ class PantryMapView(MapView):
 
         pantries = []
         print("{}, {}, {}, {}".format(min_lat,min_lon,max_lat,max_lon))
+
         for i in self.listAllPantries:
-            
             if min_lon < i["longtitude"] < max_lon and min_lat < i["latitude"] < max_lat:
                 pantries.append(i)
         for pantry in pantries:
-            self.addPantry(pantry)
+            if pantry["name"] in self.pantryNames:
+                continue
+            else:
+                self.addPantry(pantry)
     
     def addPantry(self,pantry):
         lat,lon = pantry["latitude"],pantry["longtitude"]
