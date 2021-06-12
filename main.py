@@ -5,10 +5,6 @@ from kivy.uix.label import Label
 from kivy.garden.mapview import MapMarkerPopup
 
 
-import shutil
-
-shutil.rmtree("cache")
-
 class MainApp(MDApp):
     def on_start(self):
         #Iloload na yung gps location.
