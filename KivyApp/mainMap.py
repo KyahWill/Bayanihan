@@ -3,7 +3,12 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.garden.mapview import MapMarkerPopup, MapView
 import JSON.ReadJson as readjson
+import shutil
+
+    shutil.rmtree("cache")
 class MainApp(App):
+
+
     def on_start(self):
         MainJSONfile = readjson.createMainData()
         output = []
