@@ -3,6 +3,34 @@ from kivy.clock import Clock
 from kivy.app import App
 import JSON.ReadJson as ReadJson
 from kivy.uix.button import Button
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFlatButton
+
+class LocationPopupMenu(MDDialog):
+    
+    def __init__(self, pantry_data):
+        super().__init__()
+        
+        # Set all of the fields of market data
+        self.text = str(pantry_data)
+
+    def show_dialog(self, instance):
+        if not self.dialog:
+            self.dialog = MDDialog(
+                buttons=[
+                    MDFlatButton(
+                        on_release=lambda _: self.dialog.dismiss()
+                    )
+                ],
+            )
+        self.dialog.open()
+class PantryMarker(MapMarkerPopup):
+
+    # 
+    #     marker.add_widget(Label())
+    source = "marker.png"
+    pantries = {}
+
 
 class PantryMapView(MapView):
     timer = None
@@ -34,7 +62,8 @@ class PantryMapView(MapView):
     def addPantry(self,pantry):
         lat,lon = pantry["latitude"],pantry["longtitude"]
         marker = MapMarkerPopup(lat = lat,lon = lon,source = "marker.png")
-        marker.add_widget(Button(text = str(pantry)))
+        marker.add_widget(MDFlatButton(text = str(pantry)))
+        # marker.pantries = pantry
         try:
             self.add_widget(marker)
         except Exception as e:
