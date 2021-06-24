@@ -31,6 +31,8 @@ class PantryMarker(MapMarkerPopup):
 
 
 class PantryMapView(MapView):
+
+
     timer = None
     listAllPantries = ReadJson.getPantries()
     pantryNames = []
@@ -57,10 +59,22 @@ class PantryMapView(MapView):
             else:
                 self.addPantry(pantry)
 
+    def info(self,obj):
+        close_button = MDFlatButton(text = 'Close', on_release = self.close_dialog)
+        more_button = MDFlatButton(text = 'More')
+        self.dialog = MDDialog(
+            buttons = [close_button,more_button],
+            text = "Hello world")
+        self.dialog.open()
+
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
+
     def addPantry(self,pantry):
         lat,lon = pantry["latitude"], pantry["longtitude"]
         marker = MapMarkerPopup(lat = lat,lon = lon,source = "marker.png")
-        marker.add_widget(Button(text = "Info", on_release = self.info(pantry)))
+        marker.add_widget(Button(text = "Info", on_release = self.info))
         #close_button = MDFlatButton(text="Close", on_release = self.close_dialog)
         #marker.add_widget(LocationPopupMenu(pantry))
         # marker.pantries = pantry
@@ -71,14 +85,7 @@ class PantryMapView(MapView):
         name = pantry["name"]
         self.pantryNames.append(name)
 
-    def info(self, obj):
-        close_button = MDFlatButton(text = 'Close', on_release = self.close_dialog)
-        more_button = MDFlatButton(text = 'More')
-        self.dialog = MDDialog(title = "info", text = str(pantry))
-        self.dialog.open()
-
-    def close_dialog(self, obj):
-        self.dialog.dismiss()
+    
 
 
 
