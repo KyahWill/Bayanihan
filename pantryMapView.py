@@ -6,24 +6,22 @@ from kivy.uix.button import Button
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
 
+
 class LocationPopupMenu(MDDialog):
-    
+
     def __init__(self, pantry_data):
         super().__init__()
-        
         # Set all of the fields of market data
         self.text = str(pantry_data)
 
-    def show_dialog(self, instance):
-        if not self.dialog:
-            self.dialog = MDDialog(
-                buttons=[
-                    MDFlatButton(
-                        on_release=lambda _: self.dialog.dismiss()
-                    )
-                ],
-            )
+    def show_dialog(self, obj):
+        close_button = MDFlatButton(text = 'Close', on_release = self.close_dialog)
+        self.dialog = MDDialog(buttons=[close_button])
         self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
+
 class PantryMarker(MapMarkerPopup):
 
     # 
@@ -58,11 +56,13 @@ class PantryMapView(MapView):
                 continue
             else:
                 self.addPantry(pantry)
-    
+
     def addPantry(self,pantry):
-        lat,lon = pantry["latitude"],pantry["longtitude"]
+        lat,lon = pantry["latitude"], pantry["longtitude"]
         marker = MapMarkerPopup(lat = lat,lon = lon,source = "marker.png")
-        marker.add_widget(MDFlatButton(text = str(pantry)))
+        marker.add_widget(Button(text = "Info", on_release = self.info(pantry)))
+        #close_button = MDFlatButton(text="Close", on_release = self.close_dialog)
+        #marker.add_widget(LocationPopupMenu(pantry))
         # marker.pantries = pantry
         try:
             self.add_widget(marker)
@@ -70,3 +70,16 @@ class PantryMapView(MapView):
             print(e)
         name = pantry["name"]
         self.pantryNames.append(name)
+
+    def info(self, obj):
+        close_button = MDFlatButton(text = 'Close', on_release = self.close_dialog)
+        more_button = MDFlatButton(text = 'More')
+        self.dialog = MDDialog(title = "info", text = str(pantry))
+        self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
+
+
+
+
