@@ -6,6 +6,7 @@ from PantryNameSearch import Search
 from kivy.uix.button import Button
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
+from kivymd.uix.label import MDLabel
 from kivy.uix.popup import Popup
 
 
@@ -75,8 +76,8 @@ class PantryMapView(MapView):
     def addPantry(self,pantry):
         lat,lon = pantry["latitude"], pantry["longtitude"]
         marker = MapMarkerPopup(lat = lat,lon = lon,source = "marker.png")
-        close_button = MDFlatButton(text="Close", on_release= self.close_dialog)
-        marker.add_widget(MDDialog(button = [close_button], text=str(pantry)))
+        marker.add_widget(MDLabel(text = str(pantry)))
+
         #marker.add_widget(Button(text = "info", on_release = self.info))
         # marker.pantries = pantry
         try:
