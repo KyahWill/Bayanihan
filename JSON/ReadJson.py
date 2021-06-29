@@ -12,7 +12,7 @@ if __name__ == "__main__":
     f = open("JSON\\Pantries.json", 'r', encoding='utf8', errors='ignore')
     data = json.load(f)
 
-    print(data)
+    print(data[1].keys())
 
     f.close()
     

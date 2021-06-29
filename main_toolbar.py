@@ -1,23 +1,12 @@
-#:import MapView kivy.garden.mapview.MapView
+from kivymd.app import MDApp
+from kivy.lang.builder import Builder
+from kivy_garden.mapview import MapView
+from kivymd.uix.navigationdrawer import NavigationLayout
+from kivy.core.window import Window
 
-MapView:
-    double_tap_zoom: True
-    lat: 14.5995
-    lon: 120.9842
-    zoom: 5
-    on_lat:
-        print('lat',self.lat)
-    on_lon:
-        print('lon',self.lon)
-    MapMarkerPopup:
-        source: "marker.png"
-        lat: 14.5995
-        lon: 120.9842
-
-        Button:
-            text: "Details"
-
+map_toolbar = """
 Screen:
+
     NavigationLayout:
         ScreenManager:
             Screen:
@@ -50,8 +39,12 @@ Screen:
                     font_style: 'Caption'
 
 
+        
+"""
 
+class MainApp(MDApp):
+    def build(self):
+        screen = Builder.load_string(map_toolbar)
+        return screen
 
-
-
-
+MainApp().run()

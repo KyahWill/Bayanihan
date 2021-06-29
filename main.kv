@@ -1,3 +1,30 @@
 #:include pantryMapView.kv
+#:include MDNavigationLayout kivymd.uix.navigationdrawer 
 
-PantryMapView:
+Screen:
+
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "Toolbar"
+                        left_action_items: [["menu",lambda x: nav_drawer.set_state()]]
+                        elevation: 10
+                    PantryMapView:
+                    
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            BoxLayout:
+                orientation: 'vertical'
+                Image:
+                    source: "bean.jpg"
+                MDLabel:
+                    text: "Community Pantry PH"
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                MDLabel:
+                    text: "TITE HEHE"
+                    font_style: 'Caption'
