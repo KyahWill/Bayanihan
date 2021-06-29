@@ -5,6 +5,7 @@ import JSON.ReadJson as ReadJson
 from kivy.uix.button import Button
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
+from kivy.uix.popup import Popup
 
 
 class LocationPopupMenu(MDDialog):
@@ -59,13 +60,12 @@ class PantryMapView(MapView):
             else:
                 self.addPantry(pantry)
 
-    def info(self,obj):
-        close_button = MDFlatButton(text = 'Close', on_release = self.close_dialog)
-        more_button = MDFlatButton(text = 'More')
-        self.dialog = MDDialog(
-            buttons = [close_button,more_button],
-            text = "Hello world")
-        self.dialog.open()
+    #def info(self,obj):
+    #    close_button = MDFlatButton(text = 'Close', on_release = self.close_dialog)
+    #    self.wala = MDDialog(
+    #        buttons = [close_button],
+    #        text = self.pan)
+    #    self.wala.open()
 
 
     def close_dialog(self, obj):
@@ -74,9 +74,9 @@ class PantryMapView(MapView):
     def addPantry(self,pantry):
         lat,lon = pantry["latitude"], pantry["longtitude"]
         marker = MapMarkerPopup(lat = lat,lon = lon,source = "marker.png")
-        marker.add_widget(Button(text = "Info", on_release = self.info))
-        #close_button = MDFlatButton(text="Close", on_release = self.close_dialog)
-        #marker.add_widget(LocationPopupMenu(pantry))
+        close_button = MDFlatButton(text="Close", on_release= self.close_dialog)
+        marker.add_widget(MDDialog(button = [close_button], text=str(pantry)))
+        #marker.add_widget(Button(text = "info", on_release = self.info))
         # marker.pantries = pantry
         try:
             self.add_widget(marker)
@@ -85,7 +85,6 @@ class PantryMapView(MapView):
         name = pantry["name"]
         self.pantryNames.append(name)
 
-    
 
 
 
