@@ -1,20 +1,32 @@
-import json
-import sys
+def Search(input_string,pantry_list):
+    output = []
+    for i in data:
+        # #Append "i" into output if:
+        # 1. i["name"] is equal to input_string
+        # 2. i["status"] is equal to input_string
+        # 3. i["region"] is equal to input_string
+        # 4. i["city"] is equal to input_string
+
+        # In addition, find a way that even if the letters are of the wrong case,
+        # "i" would be appended to the output array if the above conditions are still
+        # satisfied even if the letters are of the wrong case
+
+
+        if i["name"] == input_string: output.append(i)
+
+    return output
+
 
 if __name__ == "__main__":
-#Program searches for community pantry names within Pantries.json
+    import json
+    import sys  
 
-# loads the json file containing community pantries
+    
     f = open("Pantries.json", 'r', encoding='utf8', errors='ignore')
     data = json.load(f)
-
-#NOTE: As of now, community pantry names have to be EXACT when searching.
+    f.close()
     inputPantryName = input("Enter a community pantry name: \n")
+    output = Search(input_string = inputPantryName, pantry_list = data)
 
-    #prints the community pantry name if found
-    for i in data:
-        if i["name"] == inputPantryName: print(i["name"])
-
-
-# Need to be able to find a way to check json file for community pantry name string
-# and accept the user-inputted string as a substring of the entire name string to enable approximate searches 
+    for i in output:
+        print(i["name"])
