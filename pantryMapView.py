@@ -2,6 +2,7 @@ from kivy.garden.mapview import MapView,MapMarkerPopup
 from kivy.clock import Clock
 from kivy.app import App
 import JSON.ReadJson as ReadJson
+from PantryNameSearch import Search
 from kivy.uix.button import Button
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
