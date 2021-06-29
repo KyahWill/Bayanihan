@@ -76,7 +76,7 @@ class PantryMapView(MapView):
     def addPantry(self,pantry):
         lat,lon = pantry["latitude"], pantry["longtitude"]
         marker = MapMarkerPopup(lat = lat,lon = lon,source = "marker.png")
-        marker.add_widget(MDLabel(text = str(pantry)))
+        marker.add_widget(MDLabel(text = str(pantry),))
 
         #marker.add_widget(Button(text = "info", on_release = self.info))
         # marker.pantries = pantry
