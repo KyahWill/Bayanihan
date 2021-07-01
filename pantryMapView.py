@@ -76,7 +76,12 @@ class PantryMapView(MapView):
     def addPantry(self,pantry):
         lat,lon = pantry["latitude"], pantry["longtitude"]
         marker = MapMarkerPopup(lat = lat,lon = lon,source = "marker.png")
-        marker.add_widget(MDLabel(text = str(pantry),))
+        text  ='''Name: {}\nStatus: {}\nFaceBookpost: {} '''.format(pantry['name'],pantry['status'],pantry['fb_post'])
+        # ['id', 'status', 'name', 'longtitude', 'latitude', 'houseNo', 'street', 'barangay', 'region', 'province', 'city', 'gmap', 'fb_post', 'date_started'
+        x =MDLabel(text = text)
+        x.md_bg_color = (1,1,1,200/255)           
+        x.size_hint = (2,3)
+        marker.add_widget(x)
 
         #marker.add_widget(Button(text = "info", on_release = self.info))
         # marker.pantries = pantry
