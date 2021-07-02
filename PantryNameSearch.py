@@ -1,9 +1,9 @@
 def Search(input_string,pantry_list):
     output = []
-    for i in data:
+    input_length = len(input_string)
+    for pantry in data:
         # #Append "i" into output if:
         # 1. i["name"] is equal to input_string
-        # 2. i["status"] is equal to input_string
         # 3. i["region"] is equal to input_string
         # 4. i["city"] is equal to input_string
 
@@ -12,15 +12,26 @@ def Search(input_string,pantry_list):
         # satisfied even if the letters are of the wrong case
         # Suggestion: turn all community pantry names in upper case and use upper() for user input?
 
-
-        if i["name"] == input_string: output.append(i)
-
+        for i in range(len(pantry["name"])-input_length + 1):
+            if input_string.upper() == pantry["name"][i:i + input_length].upper():
+                output.append(pantry)
+            if input_string.upper() == pantry["city"][i:i + input_length].upper():
+                output.append(pantry)
+            if input_string.upper() == pantry["region"][i:i + input_length].upper():
+                output.append(pantry)
+    
      # yet to find out how to append status, region, and city from the .json file onto output var.
      # for now i've made it so they print out with the community pantry name
-
     return output
 
+def Filter(input_dictionary,pantry_list):
+    output = []
 
+    for pantry in pantry_list:
+        pass
+
+
+    return output
 if __name__ == "__main__":
     import json
     import sys  
@@ -31,11 +42,6 @@ if __name__ == "__main__":
 
     inputPantryName = input("Enter a community pantry name: \n")
     output = Search(input_string = inputPantryName, pantry_list = data)
-
     for i in output:
-        print(i["name"])
-        print(i["status"])
-        print(i["region"])
-        print(i["city"])
-
+        print(i['name'])
     f.close()

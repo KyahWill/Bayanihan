@@ -1,13 +1,13 @@
 from kivymd.app import MDApp
 from kivy.lang.builder import Builder
-from kivy_garden.mapview import MapView
-from kivymd.uix.navigationdrawer import NavigationLayout
+from kivy.garden.mapview import MapView
+from kivymd.uix.navigationdrawer import MDNavigationLayout
 from kivy.core.window import Window
 
 map_toolbar = """
 Screen:
 
-    NavigationLayout:
+    MDNavigationLayout:
         ScreenManager:
             Screen:
                 BoxLayout:
