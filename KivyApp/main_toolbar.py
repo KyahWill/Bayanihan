@@ -44,7 +44,7 @@ Screen:
 
 class MainApp(MDApp):
     def build(self):
-            screen = Builder.load_string(map_toolbar)
+        screen = Builder.load_string(map_toolbar)
         return screen
 
 

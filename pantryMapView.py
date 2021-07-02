@@ -10,6 +10,7 @@ from kivymd.uix.label import MDLabel
 from kivy.uix.popup import Popup
 
 
+
 class LocationPopupMenu(MDDialog):
 
     def __init__(self, pantry_data):
