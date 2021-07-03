@@ -9,6 +9,8 @@ from kivy.lang.builder import Builder
 
 class MainApp(MDApp):
     def on_start(self):
+        
+
         #Iloload na yung gps location.
         #magload ng gps location.
         pass

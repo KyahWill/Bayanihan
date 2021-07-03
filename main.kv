@@ -2,7 +2,6 @@
 #:include MDNavigationLayout kivymd.uix.navigationdrawer 
 
 Screen:
-
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -11,9 +10,18 @@ Screen:
                     MDToolbar:
                         title: "Toolbar"
                         left_action_items: [["menu",lambda x: nav_drawer.set_state()]]
+                        right_action_items: [["magnify",lambda y: app.search_menu.open()]]
                         elevation: 10
+                        MDTextField:
+                            hint_text: 'Search Longitude'
+                            text_color: 0,0,0,1
+                            font_style: "H5"
+                            size_hint_x: '0.5'
+                        MDRoundFlatButton:
+                            text: "Button for..."
+                            on_press: self.PantryMapView.getMarketsTry()
                     PantryMapView:
-                    
+                        
 
         MDNavigationDrawer:
             id: nav_drawer
