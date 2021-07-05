@@ -56,8 +56,9 @@ Screen:
                     MDDropDownItem:
                         id: drop_item
                         text: "Options"
-                        on_release: self.set_item("Open")
-                                  
+                        on_release: 
+                            app.menu.open()
+                            
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -72,7 +73,7 @@ Screen:
                         text: "Monday"
                         font_style: 'Caption'
                     MDDropDownItem:
-                        id: drop_item
+                        id: drop_item1
                         text: "Options"
                         on_release: self.set_item("Open")
                 BoxLayout:
@@ -89,7 +90,7 @@ Screen:
                         text: "Tuesday"
                         font_style: 'Caption'
                     MDDropDownItem:
-                        id: drop_item
+                        id: drop_item2
                         text: "Options"
                         on_release: self.set_item("Open")
                 BoxLayout:
@@ -106,7 +107,7 @@ Screen:
                         text: "Wednesday"
                         font_style: 'Caption'
                     MDDropDownItem:
-                        id: drop_item
+                        id: drop_item3
                         text: "Options"
                         on_release: self.set_item("Open")
                 BoxLayout:
@@ -123,7 +124,7 @@ Screen:
                         text: "Thursday"
                         font_style: 'Caption'
                     MDDropDownItem:
-                        id: drop_item
+                        id: drop_item4
                         text: "Options"
                         on_release: self.set_item("Open")
                 BoxLayout:
@@ -140,7 +141,7 @@ Screen:
                         text: "Friday"
                         font_style: 'Caption'
                     MDDropDownItem:
-                        id: drop_item
+                        id: drop_item5
                         text: "Options"
                         on_release: self.set_item("Open")
                 BoxLayout:
@@ -157,6 +158,6 @@ Screen:
                         text: "Saturday"
                         font_style: 'Caption'
                     MDDropDownItem:
-                        id: drop_item
+                        id: drop_item6
                         text: "Options"
                         on_release: self.set_item("Open")
