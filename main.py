@@ -26,16 +26,16 @@ class MainApp(MDApp):
         pass
 
     def __init__(self, **kwargs):
+        options = ["open", "not open", "doesnt matter"]
         super().__init__(**kwargs)
         self.screen = Builder.load_file("main.kv")
         menu_items = [
-            {
-                "viewclass": "IconListItem",
+            {    "viewclass": "IconListItem",
                 "icon": "git",
-                "text": f"Item {i}",
-                "height": dp(15),
-                "on_release": lambda x=f"Item {i}": self.set_item(x),
-            } for i in range(2)
+                "height": dp(50),
+                "text": f"{options[i]}",
+                "on_release": lambda x = f"{options[i]}": self.set_item(x)
+            } for i in range (3)
         ]
         self.menu = MDDropdownMenu(
             caller=self.screen.ids.drop_item,
@@ -48,6 +48,7 @@ class MainApp(MDApp):
     def set_item(self, text_item):
         self.screen.ids.drop_item.set_item(text_item)
         self.menu.dismiss()
+
 
     def build(self):
         return self.screen

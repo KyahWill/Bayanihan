@@ -75,7 +75,7 @@ Screen:
                     MDDropDownItem:
                         id: drop_item1
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu.open()
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
