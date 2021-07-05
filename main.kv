@@ -2,27 +2,33 @@
 #:include MDNavigationLayout kivymd.uix.navigationdrawer 
 
 Screen:
+    pantryMapView: pantry_id
+    search_input: text_field
     MDNavigationLayout:
+    
         ScreenManager:
+    
             Screen:
+    
                 BoxLayout:
                     orientation: 'vertical'
                     MDToolbar:
                         title: "Toolbar"
                         left_action_items: [["menu",lambda x: nav_drawer.set_state()]]
-                        right_action_items: [["magnify",lambda y: app.search_menu.open()]]
                         elevation: 10
                         MDTextField:
+                            id: text_field
                             hint_text: 'Search Longitude'
                             text_color: 0,0,0,1
                             font_style: "H5"
                             size_hint_x: '0.5'
                         MDRoundFlatButton:
                             text: "Button for..."
-                            on_press: self.PantryMapView.getMarketsTry()
+                            on_press: for i in root.pantryMapView.searchMarkets(input_string = root.search_input.text): print(i['name'])
                     PantryMapView:
+                        id: pantry_id
                         
-
+                    
         MDNavigationDrawer:
             id: nav_drawer
             BoxLayout:

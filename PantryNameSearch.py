@@ -1,7 +1,7 @@
 def Search(input_string, pantry_list):
     output = []
     input_length = len(input_string)
-    for pantry in data:
+    for pantry in pantry_list:
 
         for i in range(len(pantry["name"]) - input_length + 1):
             if input_string.upper() == pantry["name"][i:i + input_length].upper():

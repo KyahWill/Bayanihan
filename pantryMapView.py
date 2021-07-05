@@ -18,6 +18,10 @@ class PantryMapView(MapView):
     timer = None
     listAllPantries = pantrylist
     pantryNames = []
+    
+    def searchMarkets(self,input_string):
+        return Search(input_string = input_string,pantry_list = self.listAllPantries)
+
 
     def getMarketsTry(self):
         try: 
