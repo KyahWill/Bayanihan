@@ -34,9 +34,14 @@ Screen:
                     text: "Community Pantry PH"
                     font_style: 'Subtitle1'
                     size_hint_y: None
-                MDLabel:
-                    text: "TITE HEHE"
+                BoxLayout:
+                    MDLabel:
+                    text: "Sunday"
                     font_style: 'Caption'
+                        
+                
+                    
+                    
 
 
         
