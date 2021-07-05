@@ -13,27 +13,12 @@ def Search(input_string, pantry_list):
 
     return output
 
-
 def Filter(input_dictionary, pantry_list):
     output = []
 
-# incomplete, still need to find out how to read the city province and region of user-inputted community pantry name
+
     for pantry in pantry_list:
-
-            inputtedCity = input("Enter a city: \n")
-
-            for i in data:
-                if i["city"] == inputtedCity: print(i["city"])
-
-            inputtedProvince = input("Enter a Province: \n")
-
-            for i in data:
-                if i["province"] == inputtedProvince: print(i["province"])
-
-            inputtedRegion = input("Enter a Region: \n")
-
-            for i in data:
-                if i["region"] == inputtedRegion: print(i["region"])
+        pass
 
     return output
 
@@ -45,11 +30,27 @@ if __name__ == "__main__":
     f = open("JSON\\Pantries.json", 'r', encoding='utf8', errors='ignore')
     data = json.load(f)
 
-    inputPantryName = input("Enter a community pantry name: \n")
+    inputPantryName = input("Enter a community pantry name: ")
+    PantryCityFilter = input("Enter a city: ")
+    PantryRegionFilter = input("Enter a region: ")
+
     output = Search(input_string=inputPantryName, pantry_list=data)
     for i in output:
         print(i['name'])
-# added these back in
-        print(i["region"])
-        print(i["city"])
+        if i["region"].upper() == PantryRegionFilter.upper():
+            print("Region match found!")
+            print(i["region"])
+        else:
+            print("No region match found. Were you looking for the community pantry in...")
+            print(i["region"])
+
+# Need to find a way to implement the same checking procedure for pantry name to cities
+        if i["city"].upper() == PantryCityFilter.upper():
+            print("City match found!")
+            print(i["city"])
+        else:
+            print("No city match found. Were you looking for the community pantry in...")
+            print(i["city"])
     f.close()
+
+
