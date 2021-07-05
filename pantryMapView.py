@@ -10,35 +10,18 @@ from kivymd.uix.label import MDLabel
 from kivy.uix.popup import Popup
 
 
-class LocationPopupMenu(MDDialog):
-
-    def __init__(self, pantry_data):
-        super().__init__()
-        # Set all of the fields of market data
-        self.text = str(pantry_data)
-
-    def show_dialog(self, obj):
-        close_button = MDFlatButton(text = 'Close', on_release = self.close_dialog)
-        self.dialog = MDDialog(buttons=[close_button])
-        self.dialog.open()
-
-    def close_dialog(self, obj):
-        self.dialog.dismiss()
-
-class PantryMarker(MapMarkerPopup):
-
-    # 
-    #     marker.add_widget(Label())
-    source = "marker.png"
-    pantries = {}
-
+pantrylist = ReadJson.getPantries()
 
 class PantryMapView(MapView):
 
 
     timer = None
-    listAllPantries = ReadJson.getPantries()
+    listAllPantries = pantrylist
     pantryNames = []
+    
+    def searchMarkets(self,input_string):
+        return Search(input_string = input_string,pantry_list = self.listAllPantries)
+
 
     def getMarketsTry(self):
         try: 
