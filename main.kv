@@ -49,11 +49,15 @@ Screen:
                         Rectangle:
                             pos: self.pos
                             size: self.size
+
                     MDLabel:
                         text: "Sunday"
                         font_style: 'Caption'
-                    MDFlatButton:
-                        text: "option"
+                    MDDropDownItem:
+                        id: drop_item
+                        text: "Options"
+                        on_release: self.set_item("Open")
+                                  
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -67,8 +71,10 @@ Screen:
                     MDLabel:
                         text: "Monday"
                         font_style: 'Caption'
-                    MDFlatButton:
-                        text: "option"
+                    MDDropDownItem:
+                        id: drop_item
+                        text: "Options"
+                        on_release: self.set_item("Open")
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -82,8 +88,10 @@ Screen:
                     MDLabel:
                         text: "Tuesday"
                         font_style: 'Caption'
-                    MDFlatButton:
-                        text: "option"
+                    MDDropDownItem:
+                        id: drop_item
+                        text: "Options"
+                        on_release: self.set_item("Open")
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -97,8 +105,10 @@ Screen:
                     MDLabel:
                         text: "Wednesday"
                         font_style: 'Caption'
-                    MDFlatButton:
-                        text: "option"
+                    MDDropDownItem:
+                        id: drop_item
+                        text: "Options"
+                        on_release: self.set_item("Open")
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -112,8 +122,10 @@ Screen:
                     MDLabel:
                         text: "Thursday"
                         font_style: 'Caption'
-                    MDFlatButton:
-                        text: "option"
+                    MDDropDownItem:
+                        id: drop_item
+                        text: "Options"
+                        on_release: self.set_item("Open")
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -127,8 +139,10 @@ Screen:
                     MDLabel:
                         text: "Friday"
                         font_style: 'Caption'
-                    MDFlatButton:
-                        text: "option"
+                    MDDropDownItem:
+                        id: drop_item
+                        text: "Options"
+                        on_release: self.set_item("Open")
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -142,5 +156,7 @@ Screen:
                     MDLabel:
                         text: "Saturday"
                         font_style: 'Caption'
-                    MDFlatButton:
-                        text: "option"
+                    MDDropDownItem:
+                        id: drop_item
+                        text: "Options"
+                        on_release: self.set_item("Open")
