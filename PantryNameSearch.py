@@ -18,21 +18,21 @@ def Filter(input_dictionary, pantry_list):
     output = []
     #append every community pantry to output if it has equal value to input_dictionary
     for i in pantry_list:
-        if i["region"].upper() == PantryRegionFilter.upper():
+        if i["region"].upper() == input_dictionary["region"].upper():
             print("Region match found!")
             print(i["region"])
         else:
             print("No region match found. Were you looking for the community pantry in...")
             print(i["region"])
-
-        # Need to find a way to implement the same checking procedure for pantry name to cities
-        if i["city"].upper() == PantryCityFilter.upper():
-            print("City match found!")
-            print(i["city"])
+    # Di ko muna dinagdag lahat ng category, plus need to get the input pa from the user for active pantry days
+        if i["active_mon"] == input_dictionary["active_mon"]:
+            print("Active on Mondays")
         else:
-            print("No city match found. Were you looking for the community pantry in...")
-            print(i["city"])
-        pass
+            print("None found")
+        if i["active_thu"] == input_dictionary["active_thu"]:
+            print("Active on Thursdays")
+        else:
+            print("None found")
 
     return output
 
