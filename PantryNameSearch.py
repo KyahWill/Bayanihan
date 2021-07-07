@@ -24,15 +24,42 @@ def Filter(input_dictionary, pantry_list):
         else:
             print("No region match found. Were you looking for the community pantry in...")
             print(i["region"])
-    # Di ko muna dinagdag lahat ng category, plus need to get the input pa from the user for active pantry days
+    # Still needs input from user
+        if i["active_sun"] == input_dictionary["active_sun"]:
+            print("Active on Sundays")
+        else:
+            print("None found")
+
         if i["active_mon"] == input_dictionary["active_mon"]:
             print("Active on Mondays")
         else:
             print("None found")
+
+        if i["active_tue"] == input_dictionary["active_tue"]:
+            print("Active on Tuesdays")
+        else:
+            print("None found")
+
+        if i["active_wed"] == input_dictionary["active_wed"]:
+            print("Active on Wednesdays")
+        else:
+            print("None found")
+
         if i["active_thu"] == input_dictionary["active_thu"]:
             print("Active on Thursdays")
         else:
             print("None found")
+
+        if i["active_fri"] == input_dictionary["active_fri"]:
+            print("Active on Friday")
+        else:
+            print("None found")
+
+        if i["active_sat"] == input_dictionary["active_sat"]:
+            print("Active on Saturday")
+        else:
+            print("None found")
+
 
     return output
 
@@ -51,8 +78,15 @@ if __name__ == "__main__":
 
     input_dictionary = {
         "region": "NCR",
+        "active_sun":True,
         "active_mon":True,
-        "active_thu":True
+        "active_tue":True,
+        "active_wed":True,
+        "active_thu":True,
+        "active_fri":True,
+        "active_sat":True,
+
+
     }
 
     output = Filter(input_dictionary=input_dictionary, pantry_list=data)
