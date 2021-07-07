@@ -189,11 +189,9 @@ class MainApp(MDApp):
         )
         self.menu6.bind()
 
-
     def set_item6(self, text_item):
         self.screen.ids.drop_item6.set_item(text_item)
         self.menu6.dismiss()
-
 
     def build(self):
         return self.screen
