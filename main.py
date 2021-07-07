@@ -26,9 +26,10 @@ class MainApp(MDApp):
         pass
 
     def __init__(self, **kwargs):
-        options = ["open", "not open", "doesnt matter"]
         super().__init__(**kwargs)
         self.screen = Builder.load_file("main.kv")
+################################sunday#####################################
+        options = ["open", "not open", "doesnt matter"]
         menu_items = [
             {    "viewclass": "IconListItem",
                 "icon": "git",
@@ -37,6 +38,7 @@ class MainApp(MDApp):
                 "on_release": lambda x = f"{options[i]}": self.set_item(x)
             } for i in range (3)
         ]
+
         self.menu = MDDropdownMenu(
             caller=self.screen.ids.drop_item,
             items=menu_items,
@@ -49,6 +51,52 @@ class MainApp(MDApp):
         self.screen.ids.drop_item.set_item(text_item)
         self.menu.dismiss()
 
+##############################monday#######################################
+        options = ["open", "not open", "doesnt matter"]
+        menu_items = [
+            {"viewclass": "IconListItem",
+             "icon": "git",
+             "height": dp(50),
+             "text": f"{options[i]}",
+             "on_release": lambda x=f"{options[i]}": self.set_item1(x)
+             } for i in range(3)
+        ]
+        self.menu1 = MDDropdownMenu(
+            caller=self.screen.ids.drop_item1,
+            items=menu_items,
+            position="center",
+            width_mult=4,
+        )
+        self.menu1.bind()
+
+
+    def set_item1(self, text_item):
+        self.screen.ids.drop_item1.set_item(text_item)
+        self.menu1.dismiss()
+
+##############################tuesday###########################################
+        options = ["open", "not open", "doesnt matter"]
+        menu_items = [
+            {"viewclass": "IconListItem",
+             "icon": "git",
+             "height": dp(50),
+             "text": f"{options[i]}",
+             "on_release": lambda x=f"{options[i]}": self.set_item2(x)
+             } for i in range(3)
+        ]
+        self.menu2 = MDDropdownMenu(
+            caller=self.screen.ids.drop_item1,
+            items=menu_items,
+            position="center",
+            width_mult=4,
+        )
+        self.menu2.bind()
+
+
+    def set_item2(self, text_item):
+        self.screen.ids.drop_item2.set_item(text_item)
+        self.menu2.dismiss()
+##################################wednesday##############################
 
     def build(self):
         return self.screen
