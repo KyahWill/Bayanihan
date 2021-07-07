@@ -5,9 +5,9 @@ Screen:
     pantryMapView: pantry_id
     search_input: text_field
     MDNavigationLayout:
-    
+        
         ScreenManager:
-    
+         
             Screen:
     
                 BoxLayout:
@@ -19,7 +19,7 @@ Screen:
                         MDTextField:
                             id: text_field
                             hint_text: 'Search Longitude'
-                            text_color: 0,0,0,1
+                            text_color: 1,1,1,1
                             font_style: "H5"
                             size_hint_x: '0.5'
                         MDRoundFlatButton:
@@ -52,7 +52,7 @@ Screen:
 
                     MDLabel:
                         text: "Sunday"
-                        font_style: 'Caption'
+                        font_style: 'Subtitle1'
                     MDDropDownItem:
                         id: drop_item
                         text: "Options"
@@ -69,9 +69,10 @@ Screen:
                         Rectangle:
                             pos: self.pos
                             size: self.size
+                
                     MDLabel:
                         text: "Monday"
-                        font_style: 'Caption'
+                        font_style: 'Subtitle1'
                     MDDropDownItem:
                         id: drop_item1
                         text: "Options"
@@ -89,7 +90,7 @@ Screen:
                             size: self.size
                     MDLabel:
                         text: "Tuesday"
-                        font_style: 'Caption'
+                        font_style: 'Subtitle1'
                     MDDropDownItem:
                         id: drop_item2
                         text: "Options"
@@ -106,11 +107,11 @@ Screen:
                             size: self.size
                     MDLabel:
                         text: "Wednesday"
-                        font_style: 'Caption'
+                        font_style: 'Subtitle1'
                     MDDropDownItem:
                         id: drop_item3
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu3.open()
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -123,11 +124,11 @@ Screen:
                             size: self.size
                     MDLabel:
                         text: "Thursday"
-                        font_style: 'Caption'
+                        font_style: 'Subtitle1'
                     MDDropDownItem:
                         id: drop_item4
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu4.open()
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -140,11 +141,11 @@ Screen:
                             size: self.size
                     MDLabel:
                         text: "Friday"
-                        font_style: 'Caption'
+                        font_style: 'Subtitle1'
                     MDDropDownItem:
                         id: drop_item5
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu5.open()
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -157,8 +158,8 @@ Screen:
                             size: self.size
                     MDLabel:
                         text: "Saturday"
-                        font_style: 'Caption'
+                        font_style: 'Subtitle1'
                     MDDropDownItem:
                         id: drop_item6
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu6.open()
