@@ -99,12 +99,11 @@ class MainApp(MDApp):
         self.menu2.dismiss()
     
 ##################################wednesday##############################
-
-        options = ["Open", "Not Open", "Doesn't Matter"]
+        options = ["open", "not open", "doesnt matter"]
         menu_items = [
             {"viewclass": "IconListItem",
              "icon": "git",
-             "height": dp(40),
+             "height": dp(50),
              "text": f"{options[i]}",
              "on_release": lambda x=f"{options[i]}": self.set_item3(x)
              } for i in range(3)
@@ -121,14 +120,12 @@ class MainApp(MDApp):
     def set_item3(self, text_item):
         self.screen.ids.drop_item3.set_item(text_item)
         self.menu3.dismiss()
-
-##################################thursday##############################
-
-        options = ["Open", "Not Open", "Doesn't Matter"]
+####################################thursday#####################################
+        options = ["open", "not open", "doesnt matter"]
         menu_items = [
             {"viewclass": "IconListItem",
              "icon": "git",
-             "height": dp(40),
+             "height": dp(50),
              "text": f"{options[i]}",
              "on_release": lambda x=f"{options[i]}": self.set_item4(x)
              } for i in range(3)
@@ -145,20 +142,18 @@ class MainApp(MDApp):
     def set_item4(self, text_item):
         self.screen.ids.drop_item4.set_item(text_item)
         self.menu4.dismiss()
-
-##################################friday##############################
-
-        options = ["Open", "Not Open", "Doesn't Matter"]
+###################################friday##########################################
+        options = ["open", "not open", "doesnt matter"]
         menu_items = [
             {"viewclass": "IconListItem",
              "icon": "git",
-             "height": dp(40),
+             "height": dp(50),
              "text": f"{options[i]}",
              "on_release": lambda x=f"{options[i]}": self.set_item5(x)
              } for i in range(3)
         ]
         self.menu5 = MDDropdownMenu(
-            caller=self.screen.ids.drop_item5,
+            caller=self.screen.ids.drop_item1,
             items=menu_items,
             position="auto",
             width_mult=4,
@@ -169,14 +164,12 @@ class MainApp(MDApp):
     def set_item5(self, text_item):
         self.screen.ids.drop_item5.set_item(text_item)
         self.menu5.dismiss()
-
-##################################friday##############################
-
-        options = ["Open", "Not Open", "Doesn't Matter"]
+#######################################saturday#################################
+        options = ["open", "not open", "doesnt matter"]
         menu_items = [
             {"viewclass": "IconListItem",
              "icon": "git",
-             "height": dp(40),
+             "height": dp(50),
              "text": f"{options[i]}",
              "on_release": lambda x=f"{options[i]}": self.set_item6(x)
              } for i in range(3)
@@ -188,7 +181,6 @@ class MainApp(MDApp):
             width_mult=4,
         )
         self.menu6.bind()
-
 
     def set_item6(self, text_item):
         self.screen.ids.drop_item6.set_item(text_item)
