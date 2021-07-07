@@ -170,7 +170,7 @@ class MainApp(MDApp):
         self.screen.ids.drop_item5.set_item(text_item)
         self.menu5.dismiss()
 
-##################################friday##############################
+##################################saturday##############################
 
         options = ["Open", "Not Open", "Doesn't Matter"]
         menu_items = [
