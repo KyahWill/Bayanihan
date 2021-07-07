@@ -110,7 +110,7 @@ Screen:
                     MDDropDownItem:
                         id: drop_item3
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu3.open()
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -127,7 +127,7 @@ Screen:
                     MDDropDownItem:
                         id: drop_item4
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu4.open()
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -144,7 +144,7 @@ Screen:
                     MDDropDownItem:
                         id: drop_item5
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu5.open()
                 BoxLayout:
                     size_hint_y: None
                     height: self.minimum_height
@@ -161,4 +161,4 @@ Screen:
                     MDDropDownItem:
                         id: drop_item6
                         text: "Options"
-                        on_release: self.set_item("Open")
+                        on_release: app.menu6.open()
