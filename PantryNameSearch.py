@@ -6,58 +6,28 @@ def Search(input_string, pantry_list):
         for i in range(len(pantry["name"]) - input_length + 1):
             if input_string.upper() == pantry["name"][i:i + input_length].upper():
                 output.append(pantry)
-            if input_string.upper() == pantry["city"][i:i + input_length].upper():
+                break
+            elif input_string.upper() == pantry["city"][i:i + input_length].upper():
                 output.append(pantry)
-            if input_string.upper() == pantry["region"][i:i + input_length].upper():
+                break
+            elif input_string.upper() == pantry["region"][i:i + input_length].upper():
                 output.append(pantry)
+                break
 
     return output
 
 def Filter(input_dictionary, pantry_list):
 
     output = []
-    # Append every community pantry to output if it has equal value to input_dictionary
     for i in pantry_list:
-        if i["region"].upper() == input_dictionary["region"].upper():
-            output.append(i)
-        else:
-            print("No region match found. Were you looking for the community pantry in...")
-            print(i["region"])
-        if i["active_sun"] == input_dictionary["active_sun"]:
-            output.append(i)
-        else:
-            print("None found")
-
-        if i["active_mon"] == input_dictionary["active_mon"]:
-            output.append(i)
-        else:
-            print("None found")
-
-        if i["active_tue"] == input_dictionary["active_tue"]:
-            output.append(i)
-        else:
-            print("None found")
-
-        if i["active_wed"] == input_dictionary["active_wed"]:
-            output.append(i)
-        else:
-            print("None found")
-
-        if i["active_thu"] == input_dictionary["active_thu"]:
-            output.append(i)
-        else:
-            print("None found")
-
-        if i["active_fri"] == input_dictionary["active_fri"]:
-            output.append(i)
-        else:
-            print("None found")
-
-        if i["active_sat"] == input_dictionary["active_sat"]:
-            output.append(i)
-        else:
-            print("None found")
-
+        if i["active_sun"] == input_dictionary["active_sun"] or i["active_sun"] == "Doesn't Matter":
+            if i["active_mon"] == input_dictionary["active_mon"] or i["active_mon"] == "Doesn't Matter":
+                if i["active_tue"] == input_dictionary["active_tue"] or i["active_tue"] == "Doesn't Matter":
+                    if i["active_wed"] == input_dictionary["active_wed"] or i["active_wed"] == "Doesn't Matter":
+                        if i["active_thu"] == input_dictionary["active_thu"] or i["active_thu"] == "Doesn't Matter":
+                            if i["active_fri"] == input_dictionary["active_fri"] or i["active_fri"] == "Doesn't Matter":
+                                if i["active_sat"] == input_dictionary["active_sat"] or i["active_sat"] == "Doesn't Matter":
+                                    output.append(i)
 
     return output
 
@@ -69,10 +39,7 @@ if __name__ == "__main__":
     f = open("JSON\\Pantries.json", 'r', encoding='utf8', errors='ignore')
     data = json.load(f)
 
-    # inputPantryName = input("Enter a community pantry name: ")
-    # output = Search(input_string=inputPantryName, pantry_list=data)
-    # for i in output:
-    #     print(i['name'])
+
 
     input_dictionary = {
         "region": "NCR",

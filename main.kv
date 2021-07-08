@@ -4,6 +4,7 @@
 Screen:
     pantryMapView: pantry_id
     search_input: text_field
+    dialog_box: dialogBox
     MDNavigationLayout:
         
         ScreenManager:
@@ -12,7 +13,9 @@ Screen:
     
                 BoxLayout:
                     orientation: 'vertical'
+                    id: dialogBox
                     MDToolbar:
+
                         title: "Toolbar"
                         left_action_items: [["menu",lambda x: nav_drawer.set_state()]]
                         elevation: 10
@@ -28,6 +31,13 @@ Screen:
                             md_bg_color: 0, 0, 0, 0
                             pos_hint: {"center_x": .5, "center_y": .4}
                             on_press: for i in root.pantryMapView.searchMarkets(input_string = root.search_input.text): print(i['name'])
+                        MDRectangleFlatButton:
+                            md_background_color: 1,1,1,1
+                            text: "......."
+                            on_press: 
+                            
+                            
+                            root.pantryMapView.listPantries(input_string = root.search_input.text)
                     PantryMapView:
                         id: pantry_id
                         

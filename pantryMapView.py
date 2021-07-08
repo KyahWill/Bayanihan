@@ -7,19 +7,23 @@ from kivy.uix.button import Button
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.label import MDLabel
+from kivymd.uix.list import OneLineListItem
 from kivy.uix.popup import Popup
-
-
-pantrylist = ReadJson.getPantries()
 
 class PantryMapView(MapView):
 
 
     timer = None
-    listAllPantries = pantrylist
+    listAllPantries = ReadJson.getPantries()
     pantryNames = []
     
-    def searchMarkets(self,input_string):
+    def shift(self,lat,long):
+        self.lat = lat
+        self.long = long
+
+       
+
+    def searchPantries(self,input_string):
         return Search(input_string = input_string,pantry_list = self.listAllPantries)
 
 
