@@ -22,8 +22,10 @@ Screen:
                             text_color: 1,1,1,1
                             font_style: "H5"
                             size_hint_x: '0.5'
-                        MDRoundFlatButton:
-                            text: "Button for..."
+                        MDRectangleFlatButton:
+                            md_background_color: 1,1,1,1
+                            text: "......."
+                            
                             on_press: for i in root.pantryMapView.searchMarkets(input_string = root.search_input.text): print(i['name'])
                     PantryMapView:
                         id: pantry_id
