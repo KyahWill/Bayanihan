@@ -16,47 +16,45 @@ def Search(input_string, pantry_list):
 def Filter(input_dictionary, pantry_list):
 
     output = []
-    #append every community pantry to output if it has equal value to input_dictionary
+    # Append every community pantry to output if it has equal value to input_dictionary
     for i in pantry_list:
         if i["region"].upper() == input_dictionary["region"].upper():
-            print("Region match found!")
-            print(i["region"])
+            output.append(i)
         else:
             print("No region match found. Were you looking for the community pantry in...")
             print(i["region"])
-    # Still needs input from user
         if i["active_sun"] == input_dictionary["active_sun"]:
-            print("Active on Sundays")
+            output.append(i)
         else:
             print("None found")
 
         if i["active_mon"] == input_dictionary["active_mon"]:
-            print("Active on Mondays")
+            output.append(i)
         else:
             print("None found")
 
         if i["active_tue"] == input_dictionary["active_tue"]:
-            print("Active on Tuesdays")
+            output.append(i)
         else:
             print("None found")
 
         if i["active_wed"] == input_dictionary["active_wed"]:
-            print("Active on Wednesdays")
+            output.append(i)
         else:
             print("None found")
 
         if i["active_thu"] == input_dictionary["active_thu"]:
-            print("Active on Thursdays")
+            output.append(i)
         else:
             print("None found")
 
         if i["active_fri"] == input_dictionary["active_fri"]:
-            print("Active on Friday")
+            output.append(i)
         else:
             print("None found")
 
         if i["active_sat"] == input_dictionary["active_sat"]:
-            print("Active on Saturday")
+            output.append(i)
         else:
             print("None found")
 
