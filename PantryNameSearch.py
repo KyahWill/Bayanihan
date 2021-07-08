@@ -6,10 +6,13 @@ def Search(input_string, pantry_list):
         for i in range(len(pantry["name"]) - input_length + 1):
             if input_string.upper() == pantry["name"][i:i + input_length].upper():
                 output.append(pantry)
-            if input_string.upper() == pantry["city"][i:i + input_length].upper():
+                break
+            elif input_string.upper() == pantry["city"][i:i + input_length].upper():
                 output.append(pantry)
-            if input_string.upper() == pantry["region"][i:i + input_length].upper():
+                break
+            elif input_string.upper() == pantry["region"][i:i + input_length].upper():
                 output.append(pantry)
+                break
 
     return output
 

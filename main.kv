@@ -25,8 +25,7 @@ Screen:
                         MDRectangleFlatButton:
                             md_background_color: 1,1,1,1
                             text: "......."
-                            
-                            on_press: for i in root.pantryMapView.searchMarkets(input_string = root.search_input.text): print(i['name'])
+                            on_press: root.pantryMapView.listPantries(input_string = root.search_input.text)
                     PantryMapView:
                         id: pantry_id
                         
