@@ -18,12 +18,15 @@ Screen:
                         elevation: 10
                         MDTextField:
                             id: text_field
-                            hint_text: 'Search Longitude'
+                            hint_text: 'Search Pantry'
                             text_color: 1,1,1,1
                             font_style: "H5"
                             size_hint_x: '0.5'
                         MDRoundFlatButton:
-                            text: "Button for..."
+                            text: "Find"
+                            text_color: 1,1,1,1
+                            md_bg_color: 0, 0, 0, 0
+                            pos_hint: {"center_x": .5, "center_y": .4}
                             on_press: for i in root.pantryMapView.searchMarkets(input_string = root.search_input.text): print(i['name'])
                     PantryMapView:
                         id: pantry_id
@@ -163,3 +166,6 @@ Screen:
                         id: drop_item6
                         text: "Options"
                         on_release: app.menu6.open()
+                MDRaisedButton:
+                    text: "Filter"
+                    pos_hint: {"center_x": .5, "center_y": .4}

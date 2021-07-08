@@ -38,7 +38,6 @@ class MainApp(MDApp):
                 "on_release": lambda x = f"{options[i]}": self.set_item(x)
             } for i in range (3)
         ]
-
         self.menu = MDDropdownMenu(
             caller=self.screen.ids.drop_item,
             items=menu_items,
@@ -52,7 +51,6 @@ class MainApp(MDApp):
         self.menu.dismiss()
 
 ##############################monday#######################################
-        
         options = ["Open", "Not Open", "Doesn't Matter"]
         menu_items = [
             {"viewclass": "IconListItem",
@@ -69,7 +67,6 @@ class MainApp(MDApp):
             width_mult=4,
         )
         self.menu1.bind()
-
 
     def set_item1(self, text_item):
         self.screen.ids.drop_item1.set_item(text_item)
@@ -99,7 +96,6 @@ class MainApp(MDApp):
         self.menu2.dismiss()
     
 ##################################wednesday##############################
-
         options = ["Open", "Not Open", "Doesn't Matter"]
         menu_items = [
             {"viewclass": "IconListItem",
@@ -123,7 +119,6 @@ class MainApp(MDApp):
         self.menu3.dismiss()
 
 ##################################thursday##############################
-
         options = ["Open", "Not Open", "Doesn't Matter"]
         menu_items = [
             {"viewclass": "IconListItem",
@@ -141,13 +136,11 @@ class MainApp(MDApp):
         )
         self.menu4.bind()
 
-
     def set_item4(self, text_item):
         self.screen.ids.drop_item4.set_item(text_item)
         self.menu4.dismiss()
 
 ##################################friday##############################
-
         options = ["Open", "Not Open", "Doesn't Matter"]
         menu_items = [
             {"viewclass": "IconListItem",
@@ -165,13 +158,11 @@ class MainApp(MDApp):
         )
         self.menu5.bind()
 
-
     def set_item5(self, text_item):
         self.screen.ids.drop_item5.set_item(text_item)
         self.menu5.dismiss()
 
 ##################################saturday##############################
-
         options = ["Open", "Not Open", "Doesn't Matter"]
         menu_items = [
             {"viewclass": "IconListItem",
