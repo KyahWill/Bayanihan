@@ -7,6 +7,7 @@ from kivy.uix.button import Button
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.label import MDLabel
+from kivymd.uix.list import OneLineListItem
 from kivy.uix.popup import Popup
 
 class PantryMapView(MapView):
@@ -15,11 +16,12 @@ class PantryMapView(MapView):
     timer = None
     listAllPantries = ReadJson.getPantries()
     pantryNames = []
-    def listPantries(self,input_string):
-        pantries = self.searchPantries(input_string)
-        for i in pantries:
-            print(i["name"])
-        
+    
+    def shift(self,lat,long):
+        self.lat = lat
+        self.long = long
+
+       
 
     def searchPantries(self,input_string):
         return Search(input_string = input_string,pantry_list = self.listAllPantries)

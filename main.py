@@ -20,11 +20,11 @@ class IconListItem(OneLineIconListItem):
 
 class MainApp(MDApp):
 
-    def on_start(self):
-        #Iloload na yung gps location.
-        #magload ng gps location.
-        pass
-
+    def listPantry(self, input_string):
+        for i in root.pantryMapView.listPantries(input_string = root.search_input.text):
+            l = OneLineListItem(text="{}".format(i["name"]),on_press = self.shift(i["latitude"],["longtitude"])
+            
+                            
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.screen = Builder.load_file("main.kv")
