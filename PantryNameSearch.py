@@ -21,45 +21,46 @@ def Filter(input_dictionary, pantry_list):
     output = []
     # Append every community pantry to output if it has equal value to input_dictionary
     for i in pantry_list:
-        if i["region"].upper() == input_dictionary["region"].upper():
-            output.append(i)
-        else:
-            print("No region match found. Were you looking for the community pantry in...")
-            print(i["region"])
         if i["active_sun"] == input_dictionary["active_sun"]:
-            output.append(i)
-        else:
-            print("None found")
+            if i["active_mon"] == input_dictionary["active_mon"]:
+                if i["active_tue"] == input_dictionary["active_tue"]:
+                    if i["active_wed"] == input_dictionary["active_wed"]:
+                        if i["active_thu"] == input_dictionary["active_thu"]:
+                            if i["active_fri"] == input_dictionary["active_fri"]:
+                                if i["active_sat"] == input_dictionary["active_sat"]:
+                                    output.append(i)
+        # else:
+        #     print("None found")
 
-        if i["active_mon"] == input_dictionary["active_mon"]:
-            output.append(i)
-        else:
-            print("None found")
+        # if i["active_mon"] == input_dictionary["active_mon"]:
+        #     output.append(i)
+        # else:
+        #     print("None found")
 
-        if i["active_tue"] == input_dictionary["active_tue"]:
-            output.append(i)
-        else:
-            print("None found")
+        # if i["active_tue"] == input_dictionary["active_tue"]:
+        #     output.append(i)
+        # else:
+        #     print("None found")
 
-        if i["active_wed"] == input_dictionary["active_wed"]:
-            output.append(i)
-        else:
-            print("None found")
+        # if i["active_wed"] == input_dictionary["active_wed"]:
+        #     output.append(i)
+        # else:
+        #     print("None found")
 
-        if i["active_thu"] == input_dictionary["active_thu"]:
-            output.append(i)
-        else:
-            print("None found")
+        # if i["active_thu"] == input_dictionary["active_thu"]:
+        #     output.append(i)
+        # else:
+        #     print("None found")
 
-        if i["active_fri"] == input_dictionary["active_fri"]:
-            output.append(i)
-        else:
-            print("None found")
+        # if i["active_fri"] == input_dictionary["active_fri"]:
+        #     output.append(i)
+        # else:
+        #     print("None found")
 
-        if i["active_sat"] == input_dictionary["active_sat"]:
-            output.append(i)
-        else:
-            print("None found")
+        # if i["active_sat"] == input_dictionary["active_sat"]:
+        #     output.append(i)
+        # else:
+        #     print("None found")
 
 
     return output
